@@ -38,7 +38,7 @@ app.get('/author', (req,res) => {
 
 
 app.get("/", function (req,res){
-    res.render("harid");// render bu ejs filni HTMLga aylantirib bruzarga yuboradi
+    res.render("reja");// render bu ejs filni HTMLga aylantirib bruzarga yuboradi
 });
 // app.get("/hello", function (req,res){
 //     res.end("<h1>Siz ssovg'lar bo'limida siz</h1>");
@@ -53,5 +53,5 @@ app.get("/", function (req,res){
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen (PORT, function(){
-    console.log( `The server is running successfully on port: ${PORT}`);
+    console.log( `The server is running successfully on port: ${PORT} http://localhost3000 ${PORT}`);
 });
