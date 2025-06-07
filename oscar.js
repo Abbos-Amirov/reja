@@ -1,16 +1,3 @@
-//========== TASK ==========//
-// function countLetter(letter, word) {
-//   let count = 0;
-//   for (let i = 0; i < word.length; i++) {
-//     if (word[i] === letter) {
-//       count++;
-//     }
-//   }
-//   return count;
-// }
-
-// // natija:
-// console.log(countLetter("M", "MUXAMMAD")); // Natija: 3
 
 
 
@@ -166,18 +153,18 @@
 // console.log("===== EXECUTE =====");
 
 // DEFINE
-function qoldiqliBolish(a, b, callback) {
-  if (b === 0) {
-    callback("Mahraj nolga teng bololmaydi", null);
-  } else {
-    callback(null, a % b);
-  }
-}
+// function qoldiqliBolish(a, b, callback) {
+//   if (b === 0) {
+//     callback("Mahraj nolga teng bololmaydi", null);
+//   } else {
+//     callback(null, a % b);
+//   }
+// }
 
-// CALL
-qoldiqliBolish(55,7, (err, data) => {
-  if (err) console.log("Error:", err);
-  else {
-    console.log("data:", data);
-  }
-});
+// // CALL
+// qoldiqliBolish(55,7, (err, data) => {
+//   if (err) console.log("Error:", err);
+//   else {
+//     console.log("data:", data);
+//   }
+// });
