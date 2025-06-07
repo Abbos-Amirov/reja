@@ -1,44 +1,75 @@
+const express = require("express");
 
-console.log("Web Serverni boshlash");
+module.exports = function (db) {
+  const app = express();
 
- const express = require("express");
- const app = express();
+  app.use(express.static("public"));
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
 
-// // MongoDB chaqirish
-const db = require("./server");
+  app.set("views", "views");
+  app.set("view engine", "ejs");
 
-// // 1: Kirish code
-app.use(express.static("public"));
- app.use(express.json());
-  app.use(express.urlencoded({extended:true}));
-
-// // 2: Session code
-
-// // 3: Views code
- app.set("views", "views");
- app.set("view engine", "ejs");
-
-// // 4: Routing code
-app.post("/create-item", (req, res) => {
-
- console.log(req.body);
-   res.end("keldi")
-   
-});
-
- app.get("/", function (req, res) {
-  db.collection("plans")
-     .find()
-     .toArray((err, data) => {
-       if (err) {
+  app.get("/", function (req, res) {
+    db.collection("plans").find().toArray((err, data) => {
+      if (err) {
         console.log(err);
-        res.end("something went wrong");
-     } else {
-        console.log(data);
-         res.render("reja");
-       }
-     });
- });
+        return res.end("Xatolik yuz berdi");
+      }
+      res.render("reja", { plans: data }); // plans ni ejs ga uzatamiz
+    });
+  });
+
+  app.post("/create-item", (req, res) => {
+    db.collection("plans").insertOne({ text:req.body.reja })
+      .then(() => {
+        res.json({ message: "Qoshildi!" });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status().json({ error: "Xatolik!" });
+      });
+  });
+
+  return app;
+}
+
+
+
+
+// app.post("/create-item", (req, res) => {
+
+//   db.collection("plans").insertOne(
+//     {text: req.body.item}, () => {
+//       if(err){
+//         return
+//         res.send("Xatolik")
+//     } 
+//     else{
+//        res.redirect("/")
+//     }
+//     } );
+
+//  console.log(req.body);
+//    res.end("keldi")
+   
+//});
+
+//  app.get("/", function (req, res) {
+//   db.collection("plans")
+//      .find()
+//      .toArray((err, data) => {
+//        if (err) {
+//         console.log(err);
+//         res.end("something went wrong");
+//      } else {
+//         console.log(data);
+//          res.render("reja",{plans:data});
+//        }
+//      });
+//  });
+
+//  module.exports = app;
 
 
 

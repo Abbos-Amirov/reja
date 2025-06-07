@@ -20,7 +20,7 @@
         <div class="d-flex align-items-center mb-3">
           <input
             id="create-field"
-            name="item"
+            name="reja"
             autofocus
             autocomplete="off"
             class="form-control me-3"
@@ -39,6 +39,11 @@
         </div>
       </form>
     </div>
+    <ul>
+      <% plans.forEach(function(plan) { %>
+        <li><%= plan.text %></li>
+      <% }) %>
+    </ul>
   </div>
 </body>
 </html>
