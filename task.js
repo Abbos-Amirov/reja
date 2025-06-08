@@ -1,6 +1,6 @@
 //===========TASK B ===========
 
-function countRaqam(str) {
+function sanaRaqam(str) {
     let count = 0;
     for (let i = 0; i < str.length; i++) {
       if (!isNaN(str[i]) && str[i] !== " ") {
@@ -9,7 +9,7 @@ function countRaqam(str) {
     }
     return count;
   }
-  natija = countRaqam("49853d85g7a5gd")
+  natija = sanaRaqam("49853d85g7a5gd")
   console.log("natija:",natija); // Natija: 7
 
   //========== TASK A ==========//

@@ -16,6 +16,7 @@
     <h1 class="display-4 text-center py-1">REJA VA MAQSADLAR</h1>
 
     <div class="jumbotron p-3 shadow-sm">
+      
       <form id="create-form" action="/create-item" method="POST">
         <div class="d-flex align-items-center mb-3">
           <input
@@ -33,18 +34,37 @@
           </button>
         </div>
         <div>
-          <button type="button" id="clean-all" class="btn btn-danger" style="border-radius: 20px">
-             Hammasini Ochirish
-          </button>
+          
         </div>
       </form>
+       <%plans.map(function(plans){%> 
+
+        <ul style="margin-top: 15px;" id="item-list" class="list-group pb-5">
+          <li class="list-group-item list-group-item-info ">
+            <span class="item-text"><%= plans.reja%></span>
+            <div style="display: flex; justify-content: flex-end; gap:10px">
+              <button data-id="<%= plans._id%>"
+              style="border-radius: 4px; background-color: rgb(64, 45, 20); color: white;"  class="btn-ozgarish">O'zgartirish</button>
+                 <button data-id="<%= plans._id%>"
+                 style="border-radius: 4px; background-color: red; color: white;" class="btn-delete">O'chirish</button>
+            </div>
+            
+          </li>
+          
+        
+        </ul>
+        
+         <%}) %>
+         <button type="button" id="clean-all" class="btn btn-danger" style="border-radius: 20px">
+          Hammasini Ochirish
+       </button>
+
+      
     </div>
-    <ul>
-      <% plans.forEach(function(plan) { %>
-        <li><%= plan.text %></li>
-      <% }) %>
-    </ul>
+    
+   
   </div>
+  
 </body>
 </html>
 

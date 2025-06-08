@@ -7,10 +7,13 @@ module.exports = function (db) {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
+  // 2 Session code
+// 3 Vives code
   app.set("views", "views");
   app.set("view engine", "ejs");
 
   app.get("/", function (req, res) {
+    console.log("user entered /")
     db.collection("plans").find().toArray((err, data) => {
       if (err) {
         console.log(err);
@@ -19,8 +22,10 @@ module.exports = function (db) {
       res.render("reja", { plans: data }); // plans ni ejs ga uzatamiz
     });
   });
-
+// 4 Routing code
   app.post("/create-item", (req, res) => {
+    console.log(req.body);
+    console.log("user entered / create-item")
     db.collection("plans").insertOne({ text:req.body.reja })
       .then(() => {
         res.json({ message: "Qoshildi!" });
