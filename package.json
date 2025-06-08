@@ -7,7 +7,7 @@
     "start": "node index.js",
     "task": "nodemon task.js",
     "server": "nodemon server.js",
-    "dev": "nodemon app.js",
+    "app": "nodemon app.js",
     "oscar": "nodemon oscar.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

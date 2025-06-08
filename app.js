@@ -16,7 +16,7 @@
   });
   
   // MongoDB connect
-  const db = require('./server').db('reja');
+  const db = require('./server');
   
   // 1: Kirish code
   app.use(express.static('public'));
