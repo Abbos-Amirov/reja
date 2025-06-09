@@ -5,6 +5,7 @@
   const app = express();
   const fs = require('fs');
   const client = require('./server');
+  const mongodb = require("mongodb")
   
   let user;
   fs.readFile("database/user.json", "utf-8", (err, data) => {
@@ -36,14 +37,22 @@
       const new_reja = req.body.reja;
      
       db.collection('plans').insertOne({reja: new_reja}, (err, data) =>{
-          if(err) {
-              console.log(err);
-              res.end('something went wrong');
-          } else {
-              res.redirect('/');
-          }
+        console.log(data.ops) 
+        res.json(data.ops[0]) 
       });
   });
+
+// delete 
+  app.post("/delete-item", (req, res) =>{
+    const id = req.body.id;
+    console.log(id);
+    db.collection("plans").deleteOne(
+        {_id: new mongodb.ObjectId(id)},
+         function(err,data) {
+            res.json({state: "tog'ri"});
+        }
+    )
+  })
   
   // render  resume
   app.get('/author', function (req, res) {
