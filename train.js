@@ -1,17 +1,52 @@
 
+
+// ============= C ==========
+
+function hariflar(a, b) {
+  function natija(qiymat) {
+    return qiymat
+    .split('')
+    .sort()
+    .join('');
+  }
+  if (natija(a) === natija(b)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(hariflar("abbos", "bosab"));  
+console.log(hariflar("hello", "world"));  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //===========TASK B ===========
 
-function sanaRaqam(str) {
-    let count = 0;
-    for (let i = 0; i < str.length; i++) {
-      if (!isNaN(str[i]) && str[i] !== " ") {
-        count++;
-      }
-    }
-    return count;
-  }
-  natija = sanaRaqam("49853d85g7a5gd")
-  console.log("natija:",natija); // Natija: 7
+// function sanaRaqam(str) {
+//     let count = 0;
+//     for (let i = 0; i < str.length; i++) {
+//       if (!isNaN(str[i]) && str[i] !== " ") {
+//         count++;
+//       }
+//     }
+//     return count;
+//   }
+//   natija = sanaRaqam("49853d85g7a5gd")
+//   console.log("natija:",natija); // Natija: 7
 
   //========== TASK A ==========//
 // function countLetter(letter, word) {
