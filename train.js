@@ -1,22 +1,100 @@
+// ============= D - Task ===========
+
+
+
+class Shop {
+  constructor(non, osh, cola) {
+    this.mahsulotlar = {
+      non: non,
+      osh: osh,
+      cola:cola
+    }
+  }
+
+  
+  vaqtniOl() {
+    return new Date().toLocaleTimeString("Uz-uz", {
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+  }
+
+
+  qoldiq() {
+    
+    const vaqt = this.vaqtniOl();
+
+    console.log(
+       `Hozirgi vaqtga kelib  ${vaqt}da ${this.mahsulotlar.non}ta non,  +
+       ${this.mahsulotlar.osh}ta osh va  +
+       ${this.mahsulotlar.cola}ta cola mavjud!`
+    );
+  }
+
+  
+  sotish(mahsulot, soni) {
+    const vaqt = this.vaqtniOl();
+
+
+    if (this.mahsulotlar[mahsulot] >= soni) {
+      this.mahsulotlar[mahsulot] -= soni;
+       console.log (`Hozirgi vaqtga kelib  ${vaqt}da ${this.mahsulotlar.non}ta non,  +
+       ${this.mahsulotlar.osh}ta osh va  +
+       ${this.mahsulotlar.cola}ta cola sotildi!`)
+
+        //  Hozirgi vaqtga kelib ${vaqt}da ${soni}ta ${mahsulot} sotildi.;
+   
+    } else {
+      console.log( `Hozir ${vaqt}da xatolik: ${mahsulot} yetarli emas!`);
+    }
+  }
+
+ 
+  qabul(mahsulot, soni) {
+    const vaqt = this.vaqtniOl();
+
+    // Mahsulotdan qabul qilamiz (qo‘shamiz)
+    this.mahsulotlar[mahsulot] += soni;
+    console.log(`Hozirgi vaqtga kelib  ${vaqt}da ${this.mahsulotlar.non}ta non,  +
+    ${this.mahsulotlar.osh}ta osh va  +
+    ${this.mahsulotlar.cola}ta cola qabul qilindi!`)
+      
+
+  }
+}
+
+const shop = new Shop (22,12,15) 
+
+shop.sotish('non',34 ,'osh',9, 'cola',12 );
+
+
+console.log("+++++++==========+++++++++")
+
+
+shop.qabul('non',1 ,'osh',3, 'cola',7 ); 
+
+console.log("+++++++==========+++++++++")
+
+shop.qoldiq()
 
 
 // ============= C ==========
 
-function hariflar(a, b) {
-  function natija(qiymat) {
-    return qiymat
-    .split('')
-    .sort()
-    .join('');
-  }
-  if (natija(a) === natija(b)) {
-    return true;
-  } else {
-    return false;
-  }
-}
-console.log(hariflar("abbos", "bosab"));  
-console.log(hariflar("hello", "world"));  
+// function hariflar(a, b) {
+//   function natija(qiymat) {
+//     return qiymat
+//     .split('')
+//     .sort()
+//     .join('');
+//   }
+//   if (natija(a) === natija(b)) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// console.log(hariflar("abbos", "bosab"));  
+// console.log(hariflar("hello", "world"));  
 
 
 
