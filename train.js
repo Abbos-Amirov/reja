@@ -1,81 +1,95 @@
+// =========== T - Task ========== 
+
+function teskari(abbos,oscar){
+  let resalt = abbos.split('').reverse().join('');
+  let resalt2 = oscar.split('').reverse().join('');
+  return [resalt,resalt2];
+}
+
+natija = teskari('Abbos','OSCAR');
+console.log('natija:',natija)
+
+
+
+
 // ============= D - Task ===========
 
 
 
-class Shop {
-  constructor(non, osh, cola) {
-    this.mahsulotlar = {
-      non: non,
-      osh: osh,
-      cola:cola
-    }
-  }
+// class Shop {
+//   constructor(non, osh, cola) {
+//     this.mahsulotlar = {
+//       non: non,
+//       osh: osh,
+//       cola:cola
+//     }
+//   }
 
   
-  vaqtniOl() {
-    return new Date().toLocaleTimeString("Uz-uz", {
-      hour: "2-digit",
-      minute: "2-digit"
-    });
-  }
+//   vaqtniOl() {
+//     return new Date().toLocaleTimeString("Uz-uz", {
+//       hour: "2-digit",
+//       minute: "2-digit"
+//     });
+//   }
 
 
-  qoldiq() {
+//   qoldiq() {
     
-    const vaqt = this.vaqtniOl();
+//     const vaqt = this.vaqtniOl();
 
-    console.log(
-       `Hozirgi vaqtga kelib  ${vaqt}da ${this.mahsulotlar.non}ta non,  +
-       ${this.mahsulotlar.osh}ta osh va  +
-       ${this.mahsulotlar.cola}ta cola mavjud!`
-    );
-  }
+//     console.log(
+//        `Hozirgi vaqtga kelib  ${vaqt}da ${this.mahsulotlar.non}ta non,  +
+//        ${this.mahsulotlar.osh}ta osh va  +
+//        ${this.mahsulotlar.cola}ta cola mavjud!`
+//     );
+//   }
 
   
-  sotish(mahsulot, soni) {
-    const vaqt = this.vaqtniOl();
+//   sotish(mahsulot, soni) {
+//     const vaqt = this.vaqtniOl();
 
 
-    if (this.mahsulotlar[mahsulot] >= soni) {
-      this.mahsulotlar[mahsulot] -= soni;
-       console.log (`Hozirgi vaqtga kelib  ${vaqt}da ${this.mahsulotlar.non}ta non,  +
-       ${this.mahsulotlar.osh}ta osh va  +
-       ${this.mahsulotlar.cola}ta cola sotildi!`)
+//     if (this.mahsulotlar[mahsulot] >= soni) {
+//       this.mahsulotlar[mahsulot] -= soni;
+//        console.log (`Hozirgi vaqtga kelib  ${vaqt}da ${this.mahsulotlar.non}ta non,  +
+//        ${this.mahsulotlar.osh}ta osh va  +
+//        ${this.mahsulotlar.cola}ta cola sotildi!`)
 
-        //  Hozirgi vaqtga kelib ${vaqt}da ${soni}ta ${mahsulot} sotildi.;
+//         //  Hozirgi vaqtga kelib ${vaqt}da ${soni}ta ${mahsulot} sotildi.;
    
-    } else {
-      console.log( `Hozir ${vaqt}da xatolik: ${mahsulot} yetarli emas!`);
-    }
-  }
+//     } else {
+//       console.log( `Hozir ${vaqt}da xatolik: ${mahsulot} yetarli emas!`);
+//     }
+//   }
 
  
-  qabul(mahsulot, soni) {
-    const vaqt = this.vaqtniOl();
+//   qabul(mahsulot, soni) {
+//     const vaqt = this.vaqtniOl();
 
-    // Mahsulotdan qabul qilamiz (qo‘shamiz)
-    this.mahsulotlar[mahsulot] += soni;
-    console.log(`Hozirgi vaqtga kelib  ${vaqt}da ${this.mahsulotlar.non}ta non,  +
-    ${this.mahsulotlar.osh}ta osh va  +
-    ${this.mahsulotlar.cola}ta cola qabul qilindi!`)
+//     // Mahsulotdan qabul qilamiz (qo‘shamiz)
+//     this.mahsulotlar[mahsulot] += soni;
+//     console.log(`Hozirgi vaqtga kelib  ${vaqt}da ${this.mahsulotlar.non}ta non,  +
+//     ${this.mahsulotlar.osh}ta osh va  +
+//     ${this.mahsulotlar.cola}ta cola qabul qilindi!`)
       
 
-  }
-}
+//   }
+// }
 
-const shop = new Shop (22,12,15) 
+// const shop = new Shop (22,12,15) 
 
-shop.sotish('non',34 ,'osh',9, 'cola',12 );
-
-
-console.log("+++++++==========+++++++++")
+// shop.sotish('non',34 ,'osh',9, 'cola',12 );
 
 
-shop.qabul('non',1 ,'osh',3, 'cola',7 ); 
+// console.log("+++++++==========+++++++++")
 
-console.log("+++++++==========+++++++++")
 
-shop.qoldiq()
+// shop.qabul('non',1 ,'osh',3, 'cola',7 ); 
+
+// console.log("+++++++==========+++++++++")
+
+// shop.qoldiq()
 
 
 // ============= C ==========
