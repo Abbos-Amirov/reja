@@ -1,13 +1,39 @@
-// =========== T - Task ========== 
+//=============== F- Task ==========
 
-function teskari(abbos,oscar){
-  let resalt = abbos.split('').reverse().join('');
-  let resalt2 = oscar.split('').reverse().join('');
-  return [resalt,resalt2];
+function text( AsslomuAlekum){
+  let salom = AsslomuAlekum.split('');
+  let noyob = new Set(salom);
+  return salom.length !== noyob.size;
 }
 
-natija = teskari('Abbos','OSCAR');
-console.log('natija:',natija)
+natija = text('AssalomuAlekum, ')
+console.log('natija:', natija);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =========== D - Task ========== 
+
+// function teskari(abbos,oscar){
+//   let resalt = abbos.split('').reverse().join('');
+//   let resalt2 = oscar.split('').reverse().join('');
+//   return [resalt,resalt2];
+// }
+
+// natija = teskari('Abbos','OSCAR');
+// console.log('natija:',natija)
 
 
 
